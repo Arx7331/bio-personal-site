@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(background-image.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .verification-badge {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      position: relative;
+    }
+    
+    .verification-badge img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    
+    .verification-badge .tooltip {
+      visibility: hidden;
+      background-color: #333333;
+      color: #ffffff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 5px;
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .verification-badge:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .social-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    
+    .social-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #333333;
+      color: #ffffff;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+    
+    .social-buttons a:hover {
+      background-color: #555555;
+    }
+    
+    .social-buttons a::before {
+      font-family: "FontAwesome";
+      content: attr(data-tooltip);
+      visibility: hidden;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 5px;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .social-buttons a:hover::before {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    .social-buttons a i {
+      font-size: 20px;
+    }
+    
+    .stats {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    
+    .spotify-embed {
+      margin-top: 20px;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <img class="profile-pic" src="profile-picture.jpg" alt="Profile Picture">
+      <div class="name">
+        Name
+        <div class="verification-badge">
+          <img src="verification-badge.png" alt="Verification Badge">
+          <span class="tooltip">Owner</span>
+        </div>
+      </div>
+      <div class="stats">
+        <p>Cat lover</p>
+        <p>I love cats</p>
+      </div>
+      <div class="social-buttons">
+        <a href="https://t.me/" target="_blank" data-tooltip="Telegram"><i class="fa fa-telegram"></i></a>
+        <a href="https://github.com/" target="_blank" data-tooltip="Github"><i class="fa fa-github"></i></a>
+        <a href="https://instagram.com/" target="_blank" data-tooltip="Instagram"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <div class="spotify-embed">
+      <iframe src="https://open.spotify.com/embed/track/6hqb3fFdvhIizLtMHHA0xx" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+    
+  </div>
+</body>
+</html>
